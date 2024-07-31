@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Details</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'show_employee_details', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+<body>
+  <div class="header">
+    <h1>Employee Details</h1>
+    <div class="header-right">
+      <span><%= current_user.email %></span>
+      <%= link_to 'Logout', logout_path, data: { method: :DELETE }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+  <div class="statistics">
+        <h2>Statistics</h2>
+        <p>Total Working Hours: <%= @total_hours %></p>
+        <p>Total Leaves: <%= @total_leaves %></p>
+        <p>Total Days Attended: <%= @total_days_attended %></p>
+    </div>
+    <div class="charts">
+        <h2>Monthly Attendance</h2>
+        <%= bar_chart @monthly_attendance, xtitle: 'Date', ytitle: 'Working Hours' %>
+
+        <h2>Yearly Attendance</h2>
+        <%= bar_chart @yearly_attendance, xtitle: 'Month', ytitle: 'Working Hours' %>
+    </div>
+</body>
+</html>

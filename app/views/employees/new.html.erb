@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <div class="mt-3">
+        <h1>Sign Up</h1>
+      </div>
+      <%= form_with model: @employee, url: signup_path, local: true do |form| %>
+        <div class="form-group row mt-3">
+          <%= form.label :email, "Email" %>
+          <%= form.text_field :email, class: "form-control", placeholder: "Enter your email address", required: true %>
+        </div>
+        <div class="form-group row mt-3">
+          <%= form.label :name, "Name" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter your full name", required: true %>
+        </div>
+        <div class="form-group row mt-3">
+          <%= form.label :password, "Password" %>
+          <%= form.password_field :password, class: "form-control", placeholder: "Enter your password", required: true %>
+        </div>
+        <div class="form-group row mt-3">
+          <%= form.label :password_confirmation, "Confirm password" %>
+          <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Please enter the password again", required: true %>
+        </div>
+        <div class="form-group row mt-3">
+          <%= form.label :admin_id, "Select Admin" %>
+          <%= form.collection_select :admin_id, @admins, :id, :email, { prompt: "Select an admin" }, { class: "form-control", required: true } %>
+        </div>
+        <div class="form-group row mt-3">
+          <%= form.submit "Sign Up", placeholder: " if you don't have an account", class: "btn btn-primary", id: "signup-button", disabled: true %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const adminSelect = document.querySelector('select[name="employee[admin_id]"]');
+    const signupButton = document.getElementById('signup-button');
+
+    adminSelect.addEventListener('change', function() {
+      signupButton.disabled = adminSelect.value === "";
+    });
+  });
+</script>

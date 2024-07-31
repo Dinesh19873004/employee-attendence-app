@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-right a {
+  margin-left: 1rem;
+}
+
+.btn-logout {
+  background-color: #dc3545; 
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: #c82333; 
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.employee-table th, .employee-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.employee-table th {
+  background-color: #f8f9fa; 
+}
+
+.row-even {
+  background-color: #f2f2f2;
+}
+
+.btn-upload {
+  background-color: #007bff; 
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-upload:hover {
+  background-color: #0056b3; 
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a, .pagination span {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.pagination .current {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+}

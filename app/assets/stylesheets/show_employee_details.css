@@ -1,0 +1,36 @@
+/* app/assets/stylesheets/employee_details.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  .header-right a {
+    margin-left: 1rem;
+  }
+  .statistics {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .statistics p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  
+  
+  
